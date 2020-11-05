@@ -29,7 +29,7 @@
             }
         }
     });
-
+	
     // Closes responsive menu when a scroll trigger link is clicked
     $(".js-scroll-trigger").click(function () {
         $(".navbar-collapse").collapse("hide");
@@ -98,4 +98,26 @@
             );
         }
     }
+	
+	//this is the bit of code that makes the whole opening and closing text thing work.
+	  $('t[data-o]').click(function(e) {
+
+		//this line just stops it visiting the href which is always #
+		e.preventDefault();
+
+		var openedby = $(this).attr('data-o');
+		$('[data-ob="' + openedby +'"]').removeClass('off').addClass('on');
+
+		var closedby = $(this).attr('data-c');
+		$('[data-cb="' + closedby +'"]').remove();
+
+		$(this).contents().unwrap();
+
+	  });
+	
+	
 })(jQuery); // End of use strict
+
+
+
+
