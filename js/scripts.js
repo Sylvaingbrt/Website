@@ -107,13 +107,40 @@
 
 		var openedby = $(this).attr('data-o');
 		$('[data-ob="' + openedby +'"]').removeClass('off').addClass('on');
+		$('[data-obi="' + openedby +'"]').removeClass('off').addClass('on');
+		
 
 		var closedby = $(this).attr('data-c');
 		$('[data-cb="' + closedby +'"]').remove();
 
 		$(this).contents().unwrap();
+		
+		$("html, body").animate(
+            {
+                scrollTop: $('[data-obi="' + openedby +'"]').offset().top - 72,
+            },
+            1000,
+            "easeInOutExpo"
+        );
 
 	  });
+	  
+	  //The following is to make popup windows when click on projects to see details and download
+		
+		$(".trigger_popup_fricc").click(function(){
+			var target = $(this.hash);
+			target.show();
+		});
+		$(".trigger_popup_text").click(function(){
+			var target = $(this.hash);
+			target.show();
+		});
+		$('.hover_bkgr_fricc').click(function(){
+			$('.hover_bkgr_fricc').hide();
+		});
+		$('.popupCloseButton').click(function(){
+			$('.hover_bkgr_fricc').hide();
+		});
 	
 	
 })(jQuery); // End of use strict

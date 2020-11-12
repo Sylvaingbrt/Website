@@ -89,54 +89,23 @@ p {
   margin-bottom: 1rem;
 }
 
-/* ---------------mes modifs css----------------------- */
+/* ---------------modifs css Dreamirl----------------------- */
 .masthead .container img {
   width: 35%;
 }
-#vrar {
-  background-image: url("../assets/img/backgrounds/fantasy1.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  min-height: 40vh;
-}
 
-#art .container-fluid {
-  max-width: 1920px;
-}
-
-#art .page-section {
-  padding-bottom: 0!important;
-}
-
-#art .container-fluid {
-  display: block;
-}
-
-#art .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.img-fluid {
-  width: 100%;
-  height: 100%;
-}
-
-.logo-expert>div,.logo-generique>div {
+.logo>div,.logo-generique>div {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1rem 0 0 0;
 }
-.logo-expert img, .logo-generique img {
+.logo img, .logo-generique img {
   margin: 1rem 0;
   width: 45%;
   
 }
-.logo-expert p, .logo-generique p {
+.logo p, .logo-generique p {
   font-size: 0.7rem;
   position: absolute;
   margin: 5rem 0 0 0;
@@ -146,27 +115,8 @@ p {
   margin: 5rem 0 2rem 0;
   text-transform: uppercase;
 }
-.img-size {
-  padding: 0.7rem;
-}
-.logo-customer {
-  margin-top: 4.5rem;
-}
-.logo-customer .img-fluid {
-  width: 50%;
-}
-.logo-customer .img-size {
-  padding: 1rem;
-}
-.logo-customer>div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.img-touch {
-  margin-top: 2.1rem;
-  width: 100%!important;
-}
+
+
 .box {
   border-radius: 5px;
   background-color: grey;
@@ -174,16 +124,13 @@ p {
   width: auto;
   position: fixed;
   z-index: 1;
-  right: 0.3rem;
-  top: 35.8rem;
+  /*left: 0.3rem;
+  top: 35.8rem;*/
+  left: 0.5%;
+  bottom: 10%;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
-.footer {
-  z-index: 2;
-  position: relative;
-  background: white;
 }
 @media (max-width: 387px) {
   .box{
@@ -10295,6 +10242,7 @@ header.masthead .masthead-heading {
 	width:100%;
 	height:auto;
 }
+
 .entry .meta{
 	position:absolute;
 	top: 0;
@@ -10302,7 +10250,7 @@ header.masthead .masthead-heading {
 	width:100%;
 	height:100%;
 	z-index: 3;
-	background-color:rgba(0,0,0,0.5);
+	background-color:rgba(0,0,0,0.1);
 	text-align:center;
 	color:#fff;
 
@@ -10371,6 +10319,15 @@ header.masthead .masthead-heading {
 	padding: 0 5% 15px;
 	bottom: 10px;
 	font-size: 0.8em;
+	color: #343a40;
+}
+.entry .meta .test{
+	position: absolute;
+	width: 100%;
+	padding: 0 5% 15px;
+	bottom: 40px;
+	font-size: 2em;
+	color: #343a40;
 }
 
 .entry .meta .title,
@@ -10401,6 +10358,57 @@ header.masthead .masthead-heading {
 .entry .meta .client + .title,
 .entry .meta .date + .title{
 	bottom: 27px;
+}
+
+
+.entry .overlay{
+	position:absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index: 3;
+	background-color:rgba(0,0,0,0);
+	text-align:center;
+	color:#fff;
+
+	letter-spacing: 0.25em;
+    line-height: 1.2;
+	font-family: 'Calibre-Bold',"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",Osaka,"ＭＳ Ｐゴシック", "MS PGothic",sans-serif;
+	font-weight: 700;
+
+	opacity:0;
+
+	-webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+	   -moz-transition: opacity 0.3s ease-out, -moz-transform 0.3s ease-out;
+	     -o-transition: opacity 0.3s ease-out, -o-transform 0.3s ease-out;
+	        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+.entry a:hover .overlay{
+	opacity:1;
+	-webkit-transform: translate(0, 20px);
+	   -moz-transform: translate(0, 20px);
+	    -ms-transform: translate(0, 20px);
+	     -o-transform: translate(0, 20px);
+	        transform: translate(0, 20px);
+}
+.entry.has-body a:hover .overlay{
+	-webkit-transform: translate(0, 10px);
+	   -moz-transform: translate(0, 10px);
+	    -ms-transform: translate(0, 10px);
+	     -o-transform: translate(0, 10px);
+	        transform: translate(0, 10px);
+}
+
+.entry .overlay .test{
+	position: absolute;
+	width: 100%;
+	padding: 0 5% 15px;
+	bottom: 40px;
+	font-size: 2em;
+	color: #343a40;
 }
 
 
@@ -10435,7 +10443,7 @@ span {
   animation: fade-out 1s;
   }
 
-span.on {
+.on {
   display: block; 
   animation: fade-in 1s;
   }
@@ -10464,10 +10472,11 @@ t {
   text-decoration: none;
   color: #d85720;
   padding-bottom: 2px;
-  /*background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0%, #111 0%, #111 4%, rgba(0, 0, 0, 0) 4%);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #111 0%, #111 4%, rgba(0, 0, 0, 0) 4%);
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0%, #d85720 0%, #d85720 4%, rgba(0, 0, 0, 0) 4%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #d85720 0%, #d85720 4%, rgba(0, 0, 0, 0) 4%);
   -webkit-transition: all 250ms cubic-bezier(0.76, 0, 1, 1);
-  transition: all 250ms cubic-bezier(0.76, 0, 1, 1); */}
+  transition: all 250ms cubic-bezier(0.76, 0, 1, 1); }
 
 t.externallink {
   padding-bottom: 2px;
@@ -10487,5 +10496,78 @@ t.internallink {
     background-color: #42f4ee;
     color: #111; }
   
+  
+ /*---------------------------For pop up windows---------------------------------------
+ ---------------From https://html-online.com/articles/simple-popup-box/ ----------------
+ 
+ /* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 800px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+}
+.trigger_popup_fricc:hover, .trigger_popup_fricc:focus {
+  text-decoration: none;
+}
+
+.trigger_popup_text {
+    cursor: pointer;
+	display: inline-block;
+	color: #d85720;
+	text-decoration: none;
+}
+.trigger_popup_text:hover, .trigger_popup_text:focus {
+  text-decoration: none;
+  color: #d85720;
+}
+
+/* Popup box BEGIN */
   
 
